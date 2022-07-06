@@ -1,11 +1,11 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * main - Entry point
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-char h[] = "Holberton";
+char h[] = "main";
 int m;
 m = 0;
 while (m <= 8)

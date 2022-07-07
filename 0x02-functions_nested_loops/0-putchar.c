@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-char h[] = "main";
+char h[] = "Main";
 int m;
 m = 0;
 while (m <= 8)

@@ -6,7 +6,6 @@
  * Description: print a string follow by a new line to stdout
  * Return: none
  */
-
 void _puts(char *str)
 {
 while (*str)

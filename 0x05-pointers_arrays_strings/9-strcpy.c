@@ -1,13 +1,13 @@
 #include "main.h"
+#include <string.h>
 
 /**
- * _strcpy - function with two arguments
+ *_strcpy - copies the string
  * @dest: 1st argument char type pointer
- * @src: 2nd argument char type pointer
+ * @src:the pointer that receives the string
  * Description: copies the string to an array
- *Return: na
+ * Return: na
  */
-
 char *_strcpy(char *dest, char *src)
 {
 int i;

@@ -1,4 +1,4 @@
-#include "coding.h"
+#include "main.h"
 
 /**
  * _strcpy - function with two arguments
@@ -7,7 +7,6 @@
  * Description: copies the string to an array
  *Return: na
  */
-
 char *_strcpy(char *dest, char *src)
 {
 int i;

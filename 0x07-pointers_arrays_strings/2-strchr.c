@@ -6,7 +6,6 @@
  * @c: constant byte
  * Return: a pointer when the character is found
  */
-
 char *_strchr(char *s, char c)
 {
 int i = 0;

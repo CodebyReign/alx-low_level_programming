@@ -1,44 +1,82 @@
-#include <stdlib.h>
 #include "main.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
- *str_concat - function with two arguments
- * @s1: char type pointer
- * @s2: char type pointer
- * Description: concatenates two strings
- * Return: Null for failure or concatenated string
+ * _strlen - give the length of a string
+ * @s: the string
+ * Return: the length of a string
+ */
+
+int _strlen(char *s)
+{
+int i;
+for (i = 0 ; s[i] != '\0' ; i++)
+;
+return (i);
+}
+
+/**
+ * _strcat - concatenates two strings
+ * @dest: input parameter string
+ * @src: input parameter string
+ * Return: dest
+ */
+
+char *_strcat(char *dest, char *src)
+{
+int a;
+int b;
+a = 0;
+while (dest[a] != 0)
+{
+a++;
+}
+b = 0;
+while (src[b] != 0)
+{
+dest[a] = src[b];
+a++;
+b++;
+}
+return (dest);
+}
+
+/**
+ * str_concat - concatenate to strings
+ * @s1: the string to print
+ * @s2: the string to print
+ * Return: pointer that contains the content of s1 followed by s2
  */
 
 char *str_concat(char *s1, char *s2)
 {
-char *ptr;
-int i, i2, j, k;
-if (s1 == NULL)
-s1 = "";
-if (s2 == NULL)
-s2 = "";
-i = 0;
-while (s1[i] != '\0')
-i++;
-i2 = 0;
-while (s2[i2] != '\0')
-i2++;
-ptr = malloc(sizeof(char) * i + i2 + 1);
-if (ptr == NULL)
-return (NULL);
-j = 0;
-while (s1[j] != '\0')
+int length;
+char *space;
+if (s1 == '\0')
 {
-ptr[j] = s1[j];
-j++;
+s1 = "";
 }
-k = 0;
-while (s2[k] != '\0')
-ptr[j] = s2[k];
-j++;
-k++;
+if (s2 == '\0')
+{
+s2 = "";
 }
-ptr[j] = '\0';
-return (ptr);
+length = _strlen(s1) + _strlen(s2);
+if (s1 != '\0' && s2 != '\0')
+{
+space = malloc(sizeof(char) * length + 1);
+if (space == '\0')
+{
+return ('\0');
+}
+{
+space = _strcat(space, s1);
+space = _strcat(space, s2);
+}
+}
+else
+{
+space = "";
+}
+return (space);
+free(space);
 }

@@ -1,41 +1,40 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
- *alloc_grid - function with two arguments
- * @width: input width
- * @height: input height
- * Description: returns a pointer to a 2d array of integers
- * Return: pointer
+ * alloc_grid - returns a pointer to a 2 dimensional array of integers
+ * @width: width of the array
+ * @height: height of the array
+ * Return: a pointer to a 2 dimensional array of integers
  */
 
 int **alloc_grid(int width, int height)
 {
-int **arr;
-int i, j;
+int a, b, **net;
 if (width <= 0 || height <= 0)
-return (NULL);
-arr = (int **)malloc(sizeof(int *) * height);
-if (arr == NULL)
-return (NULL);
-for (i = 0; i < height; i++)
 {
-arr[i] = (int *)malloc(sizeof(int) * width);
-{
-if (arr[i] == '\0')
-{
-while (i >= 0)
-{
-free(arr[i]);
-i--;
+return ('\0');
 }
-free(arr);
+net = malloc(sizeof(int *) * height);
+if (net == NULL)
+{
 return (NULL);
 }
-for (j = 0; j < width; j++)
-arr[i][j] = 0;
+for (a = 0 ; a < height ; a++)
+{
+net[a] = malloc(sizeof(int) * width);
+if net[a] == NULL)
+{
+for (a = a - 1; a >= 0 ; a--)
+{
+free(net[a]);
+}
+free(net);
+return (NULL);
+}
+for (b = 0 ; b < width ; b++)
+{
+net[a][b] = 0;
 }
 }
-return (arr);
+return (net);
 }

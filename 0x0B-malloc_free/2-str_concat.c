@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -7,12 +6,10 @@
  * @s: the string
  * Return: the length of a string
  */
-
 int _strlen(char *s)
 {
 int i;
 for (i = 0 ; s[i] != '\0' ; i++)
-;
 return (i);
 }
 
@@ -22,7 +19,6 @@ return (i);
  * @src: input parameter string
  * Return: dest
  */
-
 char *_strcat(char *dest, char *src)
 {
 int a;
@@ -48,7 +44,6 @@ return (dest);
  * @s2: the string to print
  * Return: pointer that contains the content of s1 followed by s2
  */
-
 char *str_concat(char *s1, char *s2)
 {
 int length;
@@ -69,10 +64,10 @@ if (space == '\0')
 {
 return ('\0');
 }
+else
 {
 space = _strcat(space, s1);
 space = _strcat(space, s2);
-}
 }
 else
 {

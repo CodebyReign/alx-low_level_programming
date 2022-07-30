@@ -15,7 +15,7 @@ if (min > max)
 return (NULL);
 l = max - min + 1;
 a = malloc(sizeof(int) * l);
-f(a == NULL)
+if (a == NULL)
 return (NULL);
 for (i = 0; i < l; i++, min++)
 {

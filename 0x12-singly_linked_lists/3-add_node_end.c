@@ -1,33 +1,49 @@
-/*
- * File: 3-add_nodeint_end.c
- * Auth: Brennan D Baraban*
- */
+#include <stdlib.h>
+#include <string.h>
 #include "lists.h"
+
 /**
- * add_nodeint_end - Adds a new node at the
- * end of a listint_t list.
- * @head: A pointer to the address of the
- * head of the listint_t list.
- * @n: The integer for the new node to contain.
- * Return: If the function fails - NULL.
- * Otherwise - the address of the new element.
+ * _strlen - finds the length of a string
+ * @str: string to find the length of
+ * Return: length of string
  */
-list_t *add_nodeint_end(list_t **head, const int n)
+unsigned int _strlen(char *str)
 {
-listint_t *new, *last;
-new = malloc(sizeof(listint_t));
+unsigned int i;
+for (i = 0; str[i]; i++)
+;
+return (i);
+}
+/**
+ * add_node_end - adds a new node to the end of linked list
+ * @head: double pointer to a linked list
+ * @str: string to add to the new node
+ * Return: pointer to the new node
+ */
+list_t *add_node_end(list_t **head, const char *str)
+{
+list_t *new, *tmp;
+if (str == NULL)
+return (NULL);
+new = malloc(sizeof(list_t));
 if (new == NULL)
 return (NULL);
-new->n = n;
+new->str = strdup(str);
+if (new->str == NULL)
+{
+free(new);
+return (NULL);
+}
+new->len = _strlen(new->str);
 new->next = NULL;
 if (*head == NULL)
-*head = new;
-else
 {
-last = *head;
-while (last->next != NULL)
-last = last->next;
-last->next = new;
+*head = new;
+return (new);
 }
-return (*head);
+tmp = *head;
+while (tmp->next)
+tmp = tmp->next;
+tmp->next = new;
+return (new);
 }

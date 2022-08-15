@@ -4,6 +4,7 @@
 #include "lists.h"
 /**
  * main - check the code
+ *printf prints all the elements of a listint_t list
  * Return: Always 0.
  */
 int main(void)
